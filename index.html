@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 100px; }
+    input { padding: 10px; }
+  </style>
+</head>
+<body>
+
+<h2>Enter Access Key</h2>
+<input type="password" id="pw" placeholder="Access key">
+<button onclick="login()">Enter</button>
+
+<script>
+  const PASSWORD = "changeme123"; // ← CHANGE THIS
+
+  function login() {
+    const input = document.getElementById("pw").value;
+    if (input === PASSWORD) {
+      localStorage.setItem("auth", "true");
+      window.location.href = "blog.html";
+    } else {
+      alert("Wrong key");
+    }
+  }
+</script>
+
+</body>
+</html>
